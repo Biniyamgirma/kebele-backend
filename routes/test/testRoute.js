@@ -2,7 +2,7 @@ const express = require("express");
 const route = express.Router();
 const supabase = require("../../config/supabaseClient");
 require("dotenv").config();
-const corsUrl = process.env.CORS_ORIGIN;
+const corsUrl = process.env.CORS_ORIGIN || "https://kebele-frontend.vercel.app/";
 
 route.get("/", async (req, res) => {
   try {

@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 8090;
 
 app.use(
   cors({
-    origin: process.env.CORS_ORIGIN,// adjusted the cors environment variable and this will work
+    origin: process.env.CORS_ORIGIN || "https://kebele-frontend.vercel.app",// adjusted the cors environment variable and this will work
     credentials: true, // Allow cookies to be sent
   }),
 );
