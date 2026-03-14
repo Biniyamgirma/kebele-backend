@@ -5,11 +5,11 @@ const cookieParser = require("cookie-parser");
 require("dotenv").config();
 
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8090;
 
 app.use(
   cors({
-    origin: process.env.CORS_ORIGIN,
+    origin: process.env.CORS_ORIGIN,// adjusted the cors environment variable and this will work
     credentials: true, // Allow cookies to be sent
   }),
 );
