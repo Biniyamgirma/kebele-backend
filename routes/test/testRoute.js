@@ -2,6 +2,7 @@ const express = require("express");
 const route = express.Router();
 const supabase = require("../../config/supabaseClient");
 require("dotenv").config();
+const corsUrl = process.env.CORS_ORIGIN;
 
 route.get("/", async (req, res) => {
   try {
@@ -9,7 +10,7 @@ route.get("/", async (req, res) => {
     if (error) {
       return res.status(500).json({ error: error.message });
     }
-    res.json({data:data, corsUrl:process.env.CORS_ORIGIN});
+    res.json({data:data, corsUrl:corsUrl});
   } catch (error) {
     res.status(500).json({ error: "Internal Server Error", data: error });
   }
